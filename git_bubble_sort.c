@@ -34,7 +34,7 @@ int main(){
         unsorted[i] = value;
     }
 
-    printf("This is the array before being sorted\n ");
+    printf("This is the array before being sorted\n");
 
     for(int i = 0; i<=length-1;i++){
         if(i != length-1){
@@ -43,4 +43,13 @@ int main(){
         }
         printf("%d",unsorted[i]);
     }
+
+    printf("\nThis is the array after being sorted\n");
+    bubble_sort(unsorted,length);
+
+    for(int i = 0; i<=length-1;i++){
+        printf("%d,",unsorted[i]);
+    }
+    
+
 }
