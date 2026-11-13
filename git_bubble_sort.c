@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdbool.h>
+#include<stdlib.h>
 
 void bubble_sort(int *unsorted, int length){
     bool sorted = false;
@@ -18,13 +19,28 @@ void bubble_sort(int *unsorted, int length){
 }
 
 
-
 int main(){
-    int unsorted[] = {3,9,5,3,1,1,4,5};
-    int length = sizeof(unsorted) / sizeof(unsorted[0]);
+    int *unsorted;
+    int value;
+    //int length = sizeof(unsorted) / sizeof(unsorted[0]);
+    int length = 0;
+    unsorted = malloc(sizeof(int)*100);
+    printf("How many elements would you like to sort: enter the number here\n");
+    scanf("%d", &length);
+    for (int i = 0; i<length; i++){
+        printf("Enter value %d: \n", i+1);
+        scanf("%d",&value);
+       
+        unsorted[i] = value;
+    }
 
-    bubble_sort(unsorted, length);
-    for(int i = 0; i<length-1;i++){
-        printf("%d,",unsorted[i]);
+    printf("This is the array before being sorted\n ");
+
+    for(int i = 0; i<=length-1;i++){
+        if(i != length-1){
+            printf("%d,",unsorted[i]);
+            continue;
+        }
+        printf("%d",unsorted[i]);
     }
 }
